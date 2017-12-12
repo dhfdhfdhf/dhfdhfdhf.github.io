@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.transit.js"></script>
+<link href="css/CSS1.css" type="text/css" rel="stylesheet"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>关于我们</title>
+</head>
+
+<body>
+<audio controls="controls" hidden="hidden" autoplay="autoplay" loop="loop">
+  <source src="images/bgsound.mp3"  />
+  <source src="images/bgsound.mp3"  />
+</audio>
+<div class="back">
+  <div class="navbox">
+    <div class="nav">
+      <div class="logo"  style="margin-right:150px;"><a href="index.html"><img src="images/logo.png" alt="" /></a></div>
+      <ul>
+        <li><a href="index.html"><img src="images/nav-1.png" alt="" /><br />
+          首页</a></li>
+        <li><a href="news.html"><img src="images/nav-4.png" alt="" /><br />
+          动态</a></li>
+        <li><a href="about.html"><img src="images/nav-5.png" alt="" /><br />
+          关于</a></li>
+        <li><a href="contact.html"><img src="images/nav-6.png" alt="" /><br />
+          联系</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="banner">
+	<img style="display:block;" src="images/banner_1.jpg">
+    <img src="images/banner_2.jpg">
+    <img src="images/banner_3.jpg">
+    <img src="images/banner_4.jpg">
+    <img src="images/banner_5.jpg">
+    <a class="" href="" style="left:486px; color:#F00; text-align:center">1</a>
+    <a class="" href="" style="left:536px; color:#F00; text-align:center">2</a>
+    <a class="" href="" style="left:586px; color:#F00; text-align:center">3</a>
+    <a class="" href="" style="left:636px; color:#F00; text-align:center">4</a>
+    <a class="" href="" style="left:686px; color:#F00; text-align:center">5</a>
+</div>
+<div class="team">
+	<div class="title">
+   	  <p><span class="span1">TEAM</span></p>
+    	<br />
+	</div>
+
+</div>
+<div class="leftone">
+	<img src="images/about/about-left.png">
+    <p>全新的顾问式服务模式，从网站策划、网站建设实施、网站推广、网站运营、售后服务等等环节，采用专门的客户经理全程跟踪式服务模式，全面改善和建立您的网站系统.我们是站在客户的立场上考虑策划方案的，出发点是中立的、以客户利益为首位的，我们永远不会因为要您购买某项产品和服务而误导您.锐格科技将客户一切资源的所有权都移交客户，让您永无后顾之忧患！</p>
+</div>
+<div class="rightone">
+    <p>一直以来都坚持与时俱进，不断学习新的设计理念和开发技术，我们用最新的设计理念来服务我们的客服，达到良好的用户体验.用最新的开发技术来搭建网站和软件平台，从而为客户提供更加周到、细致、贴心的服务，以至于我们一直走在行业的前沿！我们坚信：创新是人类前进的永恒动力，技术有起点,创新没有终点！创新、务实、高效将是我们永远追求的目标！</p>
+    <img src="images/about/about-right.png">
+</div>
+<div class="footer">
+  <div class="contactbox">
+    <div class="contact">
+      <ul>
+        <li>地址：<br />
+          <span style="font-size:14px; color:#b5b5b5;">中国·山西<br />
+            晋中市大学街319号<br />
+          </span></li>
+        <li>联系方式：<br />
+          <span style="font-size:14px; color:#b5b5b5;">Tel:18xxxxxxx15<br />
+            Email:12xxxxxx11@qq.com</span> </li>
+        <li>服务项目<br />
+          <a href="index.html">景点介绍网站</a><br />
+        </li>
+        <li>最新动态<br />
+          <a href="index.html">景点资讯</a><br />
+        </li>
+      </ul>
+    </div>
+    <div class="copyright">copyright@2016-2017  All Rights Reserved 版权所有</div>
+  </div>
+</div>
+</div>
+<script>
+	$(".banner a").mouseover(function(){
+	$(".banner a")
+	.removeClass("nowa")
+	$(this)
+	.addClass("nowa")
+	var x=$(".banner a").index($(this));
+	$(".banner img").hide();
+	$(".banner img").eq(x).show();
+})
+$(function(){
+	/*1秒钟换一张图显示*/
+	var n=0;
+	function changeImg(){
+		if(n<4){
+			n++;
+		}else{
+			n=0;
+		}
+		$(".banner img").hide();
+		$(".banner img").eq(n).show();
+	 }
+	 var timer = setInterval(changeImg,3000);
+	 /*鼠标经过box时，停止；鼠标离开box，开始*/
+	 $(".banner").mouseover(function(){
+		 	clearInterval(timer);
+		 }).mouseout(function(){
+			 timer = setInterval(changeImg,3000);
+			 })
+})
+</script>
+</body>
+</html>
